@@ -1,0 +1,711 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="pimpl_files/filelist.xml">
+<link rel=Edit-Time-Data href="pimpl_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Making Pimpl Easy</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Vladimir Batov</o:Author>
+  <o:LastAuthor>Vladimir Batov</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>5</o:TotalTime>
+  <o:Created>2008-01-28T22:22:00Z</o:Created>
+  <o:LastSaved>2008-01-28T22:28:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3246</o:Words>
+  <o:Characters>18506</o:Characters>
+  <o:Company>WRSA</o:Company>
+  <o:Lines>154</o:Lines>
+  <o:Paragraphs>43</o:Paragraphs>
+  <o:CharactersWithSpaces>21709</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:975916466;
+	mso-list-template-ids:-420463716;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:1763574738;
+	mso-list-template-ids:1492920990;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!-- check referer --><!--SiteCatalyst code version: G.7. Copyright 1997-2004 Omniture, Inc.
+More info available at http://www.omniture.com
+-->
+<script language="JavaScript">
+<!--
+var s_pageName="";
+var s_server="";
+var s_channel="";
+var s_pageType="";
+var s_prop1="";
+var s_prop2="";
+var s_prop3="Dr. Dobb's Journal | 205918714 | Making Pimpl Easy";
+var s_prop4="Making Pimpl Easy";
+var s_prop5="C++ | Development Tools | Open Source | Architecture & Design";
+var s_prop6="";
+var s_prop7="Vladimir Batov";
+var s_prop8="203.5.160.2 | Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.11) Gecko/20061201 Firefox/2.0.0.11 (Ubuntu-feisty)";
+var s_prop9="";
+var s_prop10="";
+var s_prop11="";
+var s_prop12="";
+var s_prop13="http://www.ddj.com/article/printableArticle.jhtml?articleID=205918714&dept_url=/cpp/";
+var s_prop14="";
+var s_prop15="";
+var s_prop16="";
+
+/* E-commerce Variables */
+var s_campaign="";
+var s_state="";
+var s_zip="";
+var s_events="event5";
+var s_products="";
+var s_purchaseID="";
+var s_eVar1="";
+var s_eVar2="";
+var s_eVar3="";
+var s_eVar4="";
+var s_eVar5="";
+//-->
+</script>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-AU link=blue vlink=blue style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal><span style='font-size:18.0pt'>Making Pimpl Easy</span> </p>
+
+<p><span style='font-size:13.5pt'>The Pimpl technique is a useful way to
+minimize coupling, and separate interface and implementation. Here's a way to
+simplify Pimpl deployment.</span></p>
+
+<p style='margin-bottom:12.0pt'><span style='font-size:10.0pt;font-family:Arial'>By
+Vladimir Batov,&nbsp; <a
+href="http://www.ddj.com/;jsessionid=DNCOADYYC5QRYQSNDLRSKHSCJUNN2JVN"
+target="_blank"><!-- remove http:// substring (if present) from the url -->Dr.
+Dobb's Journal </a><br>
+Jan 25, 2008 <br>
+URL:<a
+href="http://www.ddj.com/cpp/205918714;jsessionid=DNCOADYYC5QRYQSNDLRSKHSCJUNN2JVN">http://www.ddj.com/cpp/205918714
+</a></span><o:p></o:p></p>
+
+<p><!-- ARTICLE BODY --><i>Vladimir Batov has been developing software for
+nuclear power stations, air traffic control, military radars, and many other
+things for over 25 years. He can be reached at <span class=SpellE>vladimir.batov@wrsa.com.au</span>
+</i></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3>Introduction</h3>
+
+<p>The Pimpl idiom is a simple yet robust technique to minimize coupling via
+the separation of interface and implementation and then implementation hiding.
+Successfully popularized by Sutter ([1,2]) under the cheeky Pimpl name (as for
+&quot;pointer to implementation&quot;) the technique has been known long before
+under various names (the Cheshire Cat in [3], the Handle/Body in [4], the
+Bridge in [5]) and conceptually deployed in C and C++ as far back as at least
+early eighties ([6]). </p>
+
+<p>In the domain of industrial software development where portability,
+implementation hiding and minimization of compilation dependencies come to the
+fore, the Pimpl technique can help great deal achieving those goals. Still, it
+does not seem to be very widely deployed. Sometimes that is due to efficiency
+considerations (valid or misguided) and probably more often due to additional
+implementation scaffolding and coding overhead associated with the technique. </p>
+
+<p>I have been using the technique quite extensively lately and I found myself
+increasingly frustrated having to waste time cutting and pasting the same
+Pimpl-enabling set. I &quot;<span class=SpellE>googled</span>&quot; around to
+see if there were easier deployment alternatives available. Not surprisingly, I
+found numerous Pimpl-related discussions and quite a few attempts to generalize
+the Pimpl idiom (see [7,8]). However, I was not able to find anything that I
+thought would fit my objective. </p>
+
+<p>The conventional Pimpl deployment packs quite a punch by tackling two issues
+at once. The first is the separation of interface and implementation. The
+second is implementation hiding. The former is the obvious prerequisite for the
+latter. However, it is the latter that brings in all the benefits like
+portability and minimization of compilation dependencies. </p>
+
+<p>All the implementations that I looked at managed the separation of interface
+and implementation quite well. However, the implementation hiding &#8212; the
+main quality and attraction of the Pimpl idiom &#8212; was routinely sacrificed
+in the name of generalization. </p>
+
+<p>In addition, I was looking for a simple and convenient yet flexible and
+generic deployment technique. The conventional Pimpl deployment technique is
+uninspiring but already fairly straightforward. The complexity of any
+alternative technique is to be measured against that original and simplifying
+something so straightforward might be not as simple as it might seem. </p>
+
+<p>In the end I rolled up my sleeves and came up with my own Pimpl
+generalization technique which (not surprisingly) I find quite satisfying. It's
+seemingly complete and broadly applicable, yet minimal, simple and pleasant to
+use. But I am admittedly biased. You decide for yourself. Read on. Try the code
+(located <a
+href="http://i.cmpnet.com/ddj/images/article/2008/0801/Batov_pimpl.zip">here</a>).
+Let me know if there is anything that I missed or got wrong that could be
+improved. </p>
+
+<h3>The User Perspective</h3>
+
+<p>Let's say we need to write a Pimpl-based <i>Book</i> class with pointer
+semantics. That is: </p>
+
+<p><b>a)</b> We want to separate interface and implementation and to hide
+implementation through the deployment of the Pimpl idiom.<br>
+<b>b)</b> Our <i>Book</i> class needs to have pointer semantics, i.e. with
+regard to the underlying data it will behave in the smart-pointer/proxy fashion
+by allowing shared access to the underlying implementation data. </p>
+
+<p>In that setting the <i>Book</i> class public declaration is quite likely to
+look like the following: </p>
+
+<pre>class Book</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>public:</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>Book(string const&amp; title, string const&amp; author);</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; title() const;</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; author() const;</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>bool</span> operator==(Book const&amp; that) const { return <span
+class=SpellE>impl</span>_ == <span class=SpellE>that.impl</span>_; }</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>bool</span> operator!=(Book const&amp; that) const { return !operator==(that); }</pre><pre><span style='mso-spacerun:yes'>    </span>operator <span
+class=SpellE>bool</span>() const { return <span class=SpellE>impl</span>_; }</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>private:</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>struct</span> Implementation;</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>boost::shared_ptr</span>&lt;Implementation&gt; <span class=SpellE>impl</span>_;</pre><pre>};</pre>
+
+<p>Thanks to <span class=SpellE><i>boost::shared_ptr</i></span>, applying the
+Pimpl idiom is fairly straightforward as <span class=SpellE><i>boost::shared_ptr</i></span>
+takes care of much of the scaffolding hassle. As a result, the auto-generated
+destructor, copy constructor and assignment operator suffice and writing the
+comparison operators is child's play. What more could we wish for? For one
+thing, lumping the application interface with the infrastructure scaffolding is
+messy. Moreover, in our (admittedly simple) <i>Book</i> class more than half of
+the code is the Pimpl-related scaffolding. For one class in isolation that
+might not look like that big a deal. On a larger scale, <span class=SpellE>analyzing</span>
+and maintaining twice as much code, mentally separating the application
+interface from the infrastructure scaffolding, and making sure nothing is
+forgotten, misused, or misplaced is a tiring exercise and not exactly fun. The following,
+therefore, seems like a worthwhile improvement: </p>
+
+<pre><span class=SpellE>struct</span> Book : public <span class=SpellE>pimpl</span>&lt;Book&gt;::<span
+class=SpellE>pointer_semantics</span></pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>Book(string const&amp; title, string const&amp; author);</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; title() const;</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; author() const;</pre><pre>};</pre>
+
+<p>It is considerably shorter, application-focused and reasonably
+self-explanatory. It is lean and mean, consisting of nothing but pure
+application-specific public interface. It does not even need to be a class as
+there is nothing to restrict access to. </p>
+
+<p>Probably due to the specificity of my task (and/or my programming style) I
+have been using Pimpl-based classes with pointer semantics (as in the example
+above) almost exclusively. However, it is certainly not always the right
+solution. Let's say we needed a Pimpl-based <i>Book</i> class but with value
+semantics instead. That is, we still want to have interface and implementation
+properly separated to hide implementation, but our <i>Book</i> class needs to
+be a class with every <i>Book</i> instance having and managing its own internal
+data (rather than sharing). </p>
+
+<p class=MsoNormal>If <span class=SpellE><i>boost::shared_ptr</i></span> is an
+indisputable <span class=SpellE>favorite</span> for <span class=SpellE>Pimpls</span>
+with pointer semantics, its deployment for <span class=SpellE>Pimpls</span>
+with value semantics is certain to cause a debate about efficiency, associated
+overhead, etc. However, writing and getting right a &quot;raw&quot; Pimpl-based
+class is certainly more involved and possibly more challenging with all things
+considered. The corresponding declaration might look as follows: </p>
+
+<pre>class Book</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>public:</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>Book(string const&amp; title, string const&amp; author);</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; title() const;</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; author() const;</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>bool</span> operator==(Book const&amp;) const;</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>bool</span> operator!=(Book const&amp;) const;</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>Book(Book const&amp;);</pre><pre><span style='mso-spacerun:yes'>    </span>Book&amp; operator=(Book const&amp;);</pre><pre><span style='mso-spacerun:yes'>   </span>~Book();</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>private:</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>struct</span> Implementation;</pre><pre><span style='mso-spacerun:yes'>    </span>Implementation* <span
+class=SpellE>impl</span>_;</pre><pre>};</pre>
+
+<p>Again, the interface can be improved upon and shrunk to: </p>
+
+<pre><span class=SpellE>struct</span> Book : public <span class=SpellE>pimpl</span>&lt;Book&gt;::<span
+class=SpellE>value_semantics</span></pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>Book(string const&amp; title, string const&amp; author);</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; title() const;</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; author() const;</pre><pre> <span style='mso-spacerun:yes'>   </span><span
+class=SpellE>bool</span> operator==(Book const&amp;) const;</pre><pre>};</pre>
+
+<p>It is still almost three times shorter and it consists of pure
+application-related public interface. Clean, minimal, elegant. </p>
+
+<p>Both presented <span class=SpellE>pimpl</span>-based declarations (with
+pointer and value semantics) look almost identical and internal implementations
+(as we'll see later) are as close. A notable difference is that for
+value-semantics classes the comparison operators are not freebies as with
+pointer-semantics classes. Well, the comparison operators are never freebies
+(they are never auto-generated). However, due to the specificity of classes
+with pointer semantics those comparison operators can be reduced to pointer
+comparisons and generalized. Clearly, that's not true with value-semantics
+classes. If such a class needs to be comparable, we have to write those
+comparison operators ourselves. That is, for value-semantics classes the
+comparison operators become part of the user-provided interface. Still, <span
+class=SpellE><i>pimpl</i></span><i>&lt;&gt;</i> tries to help and adds </p>
+
+<pre><span class=SpellE>bool</span> operator!=(T const&amp; that) const</pre>
+
+<p>when </p>
+
+<pre><span class=SpellE>bool</span> operator==(T const&amp; that) const</pre>
+
+<p>is supplied. </p>
+
+<p>So far our public for-all-to-see interface looks clean, minimal, and
+application-related. Our <i>Book</i> class users and those who are to maintain the
+code later are likely to appreciate that. Let's have a look at the
+implementation. </p>
+
+<h3>Behind the Interface</h3>
+
+<p>Safely tucked away, the implementation is hidden. Not merely separated from
+the interface into another class or a header file, but truly internal. It is
+all ours to implement as we wish, to optimize as we like, to modify as often as
+we need. Still, the deployment pattern is easy to remember and fairly
+straightforward to follow. Something like the following will be in some
+for-our-eyes-only <span class=SpellE>book_implementation.cpp</span> file: </p>
+
+<pre>template&lt;&gt;</pre><pre><span class=SpellE>struct</span></pre><pre><span
+class=SpellE>pimpl</span>&lt;Book&gt;::implementation</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>implementation(</pre><pre><span style='mso-spacerun:yes'>        </span>string const&amp; <span
+class=SpellE>the_title</span>,</pre><pre><span style='mso-spacerun:yes'>        </span>string const&amp; <span
+class=SpellE>the_author</span>)</pre><pre><span style='mso-spacerun:yes'>    </span>:</pre><pre><span style='mso-spacerun:yes'>        </span>title(the_title),</pre><pre><span style='mso-spacerun:yes'>        </span>author(the_author)</pre><pre><span style='mso-spacerun:yes'>    </span>{}</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>string title;</pre><pre><span style='mso-spacerun:yes'>    </span>string author;</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>int</span> price;</pre><pre>};</pre><pre> </pre><pre><span
+class=SpellE>Book::Book</span>(</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; title,</pre><pre><span style='mso-spacerun:yes'>    </span>string const&amp; author)</pre><pre>:</pre><pre><span style='mso-spacerun:yes'>    </span>base(title, author)</pre><pre>{}</pre><pre><o:p>&nbsp;</o:p></pre><pre>string const&amp;</pre><pre><span
+class=SpellE>Book::author</span>() const</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>implementation const&amp; <span
+class=SpellE>impl</span> = **this;</pre><pre><span style='mso-spacerun:yes'>    </span>return <span
+class=SpellE>impl.author</span>;</pre><pre>}</pre><pre> </pre><pre>void</pre><pre><span
+class=SpellE>Book::set_price</span>(<span class=SpellE>int</span> <span
+class=SpellE>new_price</span>)</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>(*this)-&gt;price = <span
+class=SpellE>new_price</span>;</pre><pre>}</pre>
+
+<p>In addition, if comparison functionality is required, as mentioned earlier,
+a class with value semantics will have to implement something like the
+following: </p>
+
+<pre><span class=SpellE>bool</span></pre><pre><span class=SpellE>Book::operator</span>==(Book const&amp; that) const</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>  </span><span style='mso-spacerun:yes'>  </span>implementation const&amp; self = **this;</pre><pre><span style='mso-spacerun:yes'>    </span>return <span
+class=SpellE>self.title</span> = <span class=SpellE>that.title</span> &amp;&amp; <span
+class=SpellE>self.author</span> == <span class=SpellE>that.author</span>;</pre><pre>}</pre>
+
+<p class=MsoNormal><i>Notably, <span class=SpellE>pimpl</span>&lt;Book&gt;::implementation
+is again a <span class=SpellE>struct</span> rather than a class. As long as the
+declaration is local to one file, there is generally little value in making it
+a class (your mileage may vary). </i></p>
+
+<p>Another liberating and unifying feature is that we do not need to follow
+(and fight over) a particular naming convention to draw attention to member
+variables (like the trailing underscore, the 'm_' prefix or the myriad others).
+Member variables are accessed and clearly identified as <span class=SpellE><i>impl.title</i></span>
+or <i>(*this)-&gt;title</i> or something of that sort. </p>
+
+<p>An important design-related point to note is that the external <i>Book</i>
+class describes and implements the <span class=SpellE>behavior</span>, while
+the internal <span class=SpellE><i>pimpl</i></span><i>&lt;Book&gt;::implementation</i>
+is all about data. I consider that clean separation of data and <span
+class=SpellE>behavior</span> to be a good code-management technique and good
+programming style. Data and <span class=SpellE>behavior</span> are different
+views of a system. They serve different purposes and are easier managed when
+kept separate. At this point OO fans should not be getting up in arms about
+that perceived attempt to pull data and <span class=SpellE>behavior</span>
+apart. Indeed, the association of data with <span class=SpellE>behavior</span>
+is the cornerstone of the OO programming paradigm. However, in all (that I know
+of) languages that association is done in the most direct and economical way
+&#8212; by tying data and the <span class=SpellE>behavior</span> together in a
+class. Straightforward and good for many applications, that kind of data-<span
+class=SpellE>behavior</span> association is not exactly ideal for
+implementation hiding purposes. The Pimpl idiom creates data-<span
+class=SpellE>behavior</span> association in a different way that better suits
+our implementation-hiding purpose. </p>
+
+<h3>Fully Encapsulated Memory Management and <span class=SpellE><i>Book::null</i></span><i>()</i></h3>
+
+<p>Most often Pimpl implementations ultimately boil down to an opaque pointer
+to the internal implementation data. That data is allocated on the memory heap.
+That heap-allocated data has to be managed. The family of smart-pointer classes
+(like <span class=SpellE><i>std::auto_ptr</i></span>, <span class=SpellE><i>boost::shared_ptr</i></span><i>
+</i>and the like) take good care of objects after they are created. Our
+technique takes it one step further by fully automating memory management with
+better encapsulated internal-data management and less room for user error. For
+our <i>Book</i> class instead of the more conventional: </p>
+
+<pre><span class=SpellE>Book::Book</span>(string const&amp; title, string const&amp; author)</pre><pre>:</pre><pre><span style='mso-spacerun:yes'>    </span>base(new <span
+class=SpellE>pimpl</span>&lt;Book&gt;::implementation(title, author))</pre><pre>{}</pre>
+
+<p>we simply write: </p>
+
+<pre><span class=SpellE>Book::Book</span>(string const&amp; title, string const&amp; author)</pre><pre>:</pre><pre><span style='mso-spacerun:yes'>    </span>base(title, author)</pre><pre>{}</pre>
+
+<p>All arguments passed to the base will be diligently forwarded to the
+matching <span class=SpellE><i>pimpl</i></span><i>&lt;Book&gt;::implementation</i>
+constructor or fail to compile if a suitable constructor is not found. The base
+is an actual ready-to-go convenience <span class=SpellE><i>typedef</i></span>
+to simplify references to the base class. That forwarding mechanism works for
+the constructor with no parameters as well. That is, </p>
+
+<pre><span class=SpellE>Book::Book</span>() : base() {}</pre>
+
+<p>or the same but not as explicit </p>
+
+<pre><span class=SpellE>Book::Book</span>() {}</pre>
+
+<p>will try to call <span class=SpellE><i>pimpl</i></span><i>&lt;Book&gt;::<span
+class=SpellE>implementation::implementation</span>()</i> and fail if there is
+no such. </p>
+
+<p>Here it distinctly differs from the conventional approach (deployed by the
+smart-pointer family) where an implementation object is created manually and
+explicitly and then again manually associated with the interface object. The <span
+class=SpellE>pimpl's</span> approach demonstrates a considerably stronger (and
+automatically managed) association between the public <span class=SpellE>pimpl</span>-derived
+class (the interface) and its internal implementation. Hence, the default <span
+class=SpellE>behavior</span> is that there is always an implementation data
+behind every interface object. To override this default <span class=SpellE>behavior</span>
+we might write something like: </p>
+
+<pre><span class=SpellE>Book::Book</span>() : base(null())</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>// an invalid Book object is created</pre><pre><span style='mso-spacerun:yes'>    </span>// that does not have data behind it</pre><pre>}</pre><pre><o:p>&nbsp;</o:p></pre><pre>void</pre><pre><span
+class=SpellE>Book::do_something</span>()</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>if (!*this)</pre><pre><span style='mso-spacerun:yes'>    </span>{</pre><pre> <span style='mso-spacerun:yes'>       </span>// implementation is created only when needed.</pre><pre><span style='mso-spacerun:yes'>        </span>implementation* <span
+class=SpellE>impl</span> = new implementation(...);</pre><pre><span style='mso-spacerun:yes'>        </span>this-&gt;reset(<span
+class=SpellE>impl</span>);</pre><pre><span style='mso-spacerun:yes'>    </span>}</pre><pre><span style='mso-spacerun:yes'>    </span>// do actual processing</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>}</pre>
+
+<p>What happens here is that we explicitly (via <i>null()</i>) instruct the
+underlying <span class=SpellE>pimpl</span> base to be created empty/invalid
+(like the NULL pointer or an empty <span class=SpellE><i>boost::shared_ptr</i></span><i>()</i>).
+Later we create an implementation object explicitly and assign the base to
+manage it. That technique is useful for lazy instantiation optimization (as in
+the example above) or to support dynamic polymorphism that is discussed later. </p>
+
+<p>Above we used <i>null()</i> to create an invalid <i>Book</i> object with no
+internal data: </p>
+
+<pre><span class=SpellE>Book::Book</span>() : base(null()) {}</pre>
+
+<p>We might use such an invalid <i>Book</i> object to indicate a no-book
+condition in the same fashion as the NULL pointer is used: </p>
+
+<pre>Book</pre><pre><span class=SpellE>find_book</span>()</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre><span style='mso-spacerun:yes'>    </span>// found nothing, return an invalid Book</pre><pre><span style='mso-spacerun:yes'>    </span>return Book();</pre><pre>}</pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:10.0pt;font-family:"Courier New"'>...<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Book <span class=SpellE>book</span>
+= <span class=SpellE>find_book</span>();<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-size:10.0pt;font-family:"Courier New"'>if (!book) report
+book-not-found;<o:p></o:p></span></p>
+
+<p>Well, there is no need to write code constructing such an invalid object.
+All <span class=SpellE>pimpl</span>-based classes already have this &#8212;
+that same mentioned <i>null()</i>. Fully qualified for our Book example, it is <span
+class=SpellE><i>Book::null</i></span><i>()</i>. Consequently, the code above is
+most likely to look as follows: </p>
+
+<pre>Book</pre><pre><span class=SpellE>find_book</span>()</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre><span style='mso-spacerun:yes'>    </span>// found nothing, return an invalid Book</pre><pre><span style='mso-spacerun:yes'>    </span>return <span
+class=SpellE>Book::null</span>();</pre><pre>}</pre>
+
+<h3>Something Pimpl Does Not Do</h3>
+
+<p>Pimpl (especially its variation with pointer semantics) might well be
+classified as yet another deployment of the smart-pointer idiom. However, the
+similarity with <span class=SpellE>boost::shared_ptr</span> and the like does
+not go far. <span class=SpellE>Pimpl's</span> primary goal is implementation
+hiding. For Pimpl the smart-pointer <span class=SpellE>behavior</span> is
+secondary and somewhat incidental rather than the primary design objective (as
+for <span class=SpellE><i>boost::shared_ptr</i></span>, <span class=SpellE><i>std::auto_ptr</i></span>,
+etc.). Due to different design goal, Pimpl possesses far stronger association
+(and deliberate coupling) between the external interface and internal
+implementation classes. More so, it does not provide the dereferencing
+functionality (something expected from purpose-built smart pointers). Whatever
+there might be in the internal implementation of a Pimpl-based class, it is
+unreasonable to expect (and incorrect to provide) public access to that
+implementation via <i>operator-&gt;()</i>. In fact, it is outright impossible
+for a properly implemented Pimpl-based class. After all, the Pimpl idiom is
+about implementation hiding and it is not called hiding for nothing. </p>
+
+<h3>Pimpl and Dynamic Polymorphism</h3>
+
+<p>The application of the Pimpl idiom to polymorphic class hierarchies is well
+described in the &quot;Bridge&quot; section of [5]. In a nutshell, as Pimpl
+splits one class into two distinct classes (interface and implementation), the
+same goes for hierarchies of classes. With the Pimpl idiom applied a class
+hierarchy is split into two class hierarchies, with one hierarchy for
+interfaces and the other separate hierarchy for implementations. For example, </p>
+
+<pre><span class=SpellE>struct</span> Widget : public <span class=SpellE>pimpl</span>&lt;Widget&gt;::<span
+class=SpellE>pointer_semantics</span></pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>Widget(parameters);</pre><pre><span style='mso-spacerun:yes'>    </span>virtual ~Widget();</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>};</pre><pre> </pre><pre><span
+class=SpellE>struct</span> Button : public Widget</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>Button(parameters);</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>};</pre><pre> </pre><pre><span
+class=SpellE>struct</span> <span class=SpellE>PushButton</span> : public Button</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>PushButton</span>(parameters);</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>};</pre>
+
+<p>And the implementation hierarchy might be looking as follows: </p>
+
+<pre><span class=SpellE>typedef</span> <span class=SpellE>pimpl</span>&lt;Widget&gt;::implementation <span
+class=SpellE>WidgetImpl</span>;</pre><pre><o:p>&nbsp;</o:p></pre><pre>template&lt;&gt;</pre><pre><span
+class=SpellE>struct</span> <span class=SpellE>pimpl</span>&lt;Widget&gt;::implementation</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>implementation(parameters) {...}</pre><pre><span style='mso-spacerun:yes'>    </span>virtual ~implementation() {...}</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>};</pre><pre> </pre><pre><span
+class=SpellE>struct</span> <span class=SpellE>ButtonImpl</span> : public <span
+class=SpellE>WidgetImpl</span></pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>ButtonImpl</span>(parameters) : <span class=SpellE>WidgetImpl</span>(parameters) {...}</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>};</pre><pre> </pre><pre><span
+class=SpellE>struct</span> <span class=SpellE>PushButtonImpl</span> : public <span
+class=SpellE>ButtonImpl</span></pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>PushButtonImpl</span>(parameters) : <span class=SpellE>ButtonImpl</span>(parameters) {...}</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>};</pre>
+
+<p>So far, building two separate &#8212;: interface and implementation &#8212;
+class hierarchies looks nothing out of the ordinary. However, it gets more
+interesting when we need to establish correct interface-implementation
+associations. The standard <span class=SpellE>behavior</span> is that
+Pimpl-based infrastructure automatically creates those associations between a <span
+class=SpellE><i>Foo</i></span> interface class and a <span class=SpellE><i>pimpl</i></span><i>&lt;<span
+class=SpellE>Foo</span>&gt;::implementation</i> implementation class. That
+works well for the <i>Widget</i> class in our example above, as an instance of <span
+class=SpellE><i>pimpl</i></span><i>&lt;Widget&gt;::implementation</i> is
+automatically created and associated with an instance of the <i>Widget</i>
+interface class. That is what is needed. Therefore, <i>Widget</i> constructors
+still look familiar: </p>
+
+<pre><span class=SpellE>Widget::Widget</span>(parameters) : base(parameters)</pre><pre>{ ...</pre><pre>}</pre>
+
+<p>For the derived classes, though, the situation gets somewhat more involved
+as doing something like: </p>
+
+<pre><span class=SpellE>Button::Button</span>(parameters) : Widget(parameters)</pre><pre>{ ...</pre><pre>}</pre>
+
+<p>will result in <span class=SpellE><i>pimpl</i></span><i>&lt;Widget&gt;::implementation</i>
+internally created and associated with an instance of <i>Button</i> when we
+actually needed <span class=SpellE><i>ButtonImpl</i></span>. Given that the
+automatically created interface-implementation association is not good for
+run-time polymorphic classes, we have to manage those associations themselves: </p>
+
+<pre><span class=SpellE>Button::Button</span>(parameters) : Widget(null&lt;Widget&gt;())</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>reset(new <span
+class=SpellE>ButtonImpl</span>(<span class=SpellE>parameteres</span>));</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>}</pre><pre><o:p>&nbsp;</o:p></pre><pre><span
+class=SpellE>PushButton::PushButton</span>(parameters) : Button(null&lt;Button&gt;())</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>reset(new <span
+class=SpellE>PushButtonImpl</span>(<span class=SpellE>parameteres</span>));</pre><pre><span style='mso-spacerun:yes'>    </span>...</pre><pre>}</pre>
+
+<p>Above, we </p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'>disable the automatic
+     interface-implementation management by initializing the base class with
+     null&lt;&gt;();</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'>explicitly create an
+     instance of the correct implementation class with new;</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'>and explicitly create an
+     interface-implementation association with reset().</li>
+</ol>
+
+<h3>Pimpl at Work</h3>
+
+<p>Having been using the described Pimpl quite extensively lately, I could not
+help noticing that deploying other programming techniques was easy with the
+Pimpl. We have already talked about lazy data instantiation. Other examples
+might include deploying the Singleton: </p>
+
+<pre>// declaration</pre><pre><span class=SpellE>struct</span> <span
+class=SpellE>Foo</span> : public <span class=SpellE>pimpl</span>&lt;<span
+class=SpellE>Foo</span>&gt;::<span class=SpellE>pointer_semantics</span></pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>// The public &quot;constructor&quot;.</pre><pre><span style='mso-spacerun:yes'>    </span>// Does not create new data but returns</pre><pre><span style='mso-spacerun:yes'>    </span>// a reference to the singleton instance.</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>Foo</span>();</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>private:</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>// Actual constructor.</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>Foo</span>(parameters);</pre><pre>};</pre><pre><o:p>&nbsp;</o:p></pre><pre>// implementation</pre><pre><span
+class=SpellE>Foo::Foo</span>(): base(null())</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span>static <span
+class=SpellE>Foo</span> <span class=SpellE>single_foo</span>(parameters);</pre><pre><span style='mso-spacerun:yes'>    </span>*this = <span
+class=SpellE>single_foo</span>;</pre><pre>}</pre>
+
+<p>or managing/accessing a dictionary: </p>
+
+<pre>// In the implementation file</pre><pre><span class=SpellE>typedef</span> <span
+class=SpellE>std::map</span>&lt;string, Book&gt; <span class=SpellE>AllBooks</span>;</pre><pre> </pre><pre>static <span
+class=SpellE>AllBooks</span> books;</pre><pre> </pre><pre><span class=SpellE>Book::Book</span>(string const&amp; title) : base(null())</pre><pre>{</pre><pre><span style='mso-spacerun:yes'>    </span><span
+class=SpellE>AllBooks::iterator</span> it = <span class=SpellE>books.find</span>(title);</pre><pre> </pre><pre><span style='mso-spacerun:yes'>    </span>// If the title found, return it.</pre><pre><span style='mso-spacerun:yes'>    </span>// Otherwise, return an invalid book.</pre><pre><span style='mso-spacerun:yes'>    </span>if (it != <span
+class=SpellE>books.end</span>()) *this = it-&gt;second;</pre><pre>}</pre>
+
+<p>or easy integration with <span class=SpellE><i>boost::serialization</i></span>
+and many other applications of the described Pimpl. </p>
+
+<h3>Conclusion</h3>
+
+<p>Writing a conventional Pimpl-based class is not hard. However, repeating the
+same scaffolding over and over again is tedious and error-prone. Why do that if
+we do not have to? The suggested Pimpl generalization technique seems flexible,
+minimal and elegant, and helpful. It is yet another small gadget in your
+programming toolbox to make your work fun. Grab it, use it, tell me if there is
+anything missed and/or wrong and together we will get it even better. </p>
+
+<h3>Acknowledgements</h3>
+
+<p>Many thanks to the people on the Boost developers mailing list for their
+constructive suggestions and especially to Peter <span class=SpellE>Dimov</span>
+for his incomplete-type management technique and the implementation of <span
+class=SpellE><i>boost::impl_ptr</i></span> ([10]) that I used the ideas for <span
+class=SpellE><i>pimpl::impl_ptr</i></span> from. </p>
+
+<h3>References</h3>
+
+<p>1. Guru of the Week #24. http://www.gotw.ca/gotw/024.htm<br>
+2. Herb Sutter. Exceptional C++ (Addison-Wesley, 1999)<br>
+3. J. <span class=SpellE>Carolan</span>. Constructing bullet-proof classes. In
+Proceedings C++ at Work'89 (SIGS Publications, 1989)<br>
+4. James O. <span class=SpellE>Coplien</span>. Advanced C++ Programming Styles
+and Idioms (Addison-Wesley, 1992)<br>
+5. Eric Gamma et al. Design Patterns (Addison-Wesley,1995)<br>
+6. Paul J. <span class=SpellE>Asente</span> &amp; Ralph R. <span class=SpellE>Swick</span>.
+X Window System Toolkit (Butterworth-Heinemann, 1985)<br>
+7. Peter <span class=SpellE>Kümmel</span>. The Loki library.
+http://loki-lib.sourceforge.net/index.php?n=Idioms.Pimpl<br>
+8. <span class=SpellE>Asger</span> <span class=SpellE>Mangaard</span>.
+http://article.gmane.org/gmane.comp.lib.boost.devel/132547<br>
+9. Boost File Vault. http://www.boost-consulting.com/vault/index.php<br>
+10. Peter <span class=SpellE>Dimov</span>. The <span class=SpellE>boost::impl_ptr</span>
+source code. http://tech.groups.yahoo.com/group/boost/files/impl_ptr/ </p>
+
+</div>
+
+</body>
+
+</html>
